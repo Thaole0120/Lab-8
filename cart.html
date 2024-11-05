@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Carts</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <style>
+        /* Style for table */
+        th, td {
+            width: 25%; 
+            text-align: center; 
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app">
+        <table>
+            <tr>
+                <th>Item</th>
+                <th>Unit Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+            </tr>
+            <tr>
+                <td>{{ name }}</td>
+                <td>{{ unitPrice }}</td> 
+                <td><input type="number" v-model="quantity"></td> 
+                <td>{{ total}}</td> 
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        // Destructure Vue's createApp, ref, and computed functions
+        const { createApp, ref, computed } = Vue;
+
+        createApp({
+            setup() {
+                // Define reactive references for name, quantity, and unit price
+                const name = ref('Hat');
+                const quantity = ref(1);
+                const unitPrice = ref(4.99);
+
+                // Computed property to calculate total price
+                const total = computed( function() {
+                    const totalPrice = quantity.value * unitPrice.value // Calculate total based on quantity and unit price
+                     const formattedPrice = totalPrice.toFixed(2) //Formatting the total Price to 2 decimals                     return formattedPrice
+                })
+
+                return {
+                    name,
+                    quantity,
+                    unitPrice,
+                    total
+                }
+            }
+        }).mount('#app'); // Mount the Vue app to the DOM element with id 'app'
+    </script>
+
+</body>
+</html>

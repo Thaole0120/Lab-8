@@ -1,0 +1,15 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2759
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf0 - The warning message means that Vue is trying to access the property during the rendering process, but it hasn\'92t been properly defined or initialized in the component. \
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 - This usually means that I referenced a property (such as a data property, computed property, or method) in the template, but I forgot to define it in the data() function  or return it from the setup() function \
+\pard\pardeftab720\partightenfactor0
+\cf0 - This warning shouldn\'92t be ignored because it indicates that Vue won\'92t be able to access the property and render it correctly, potentially leading to missing or incorrect data in the UI.\
+- To fix it, I simply need to ensure that the property is properly defined and accessible in the component\'92s reactive state.\
+}
